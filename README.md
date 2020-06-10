@@ -33,9 +33,9 @@ A conda environment is a directory that contains a specific collection of conda 
     *   I used the python 3.7 version, the 64- Bit Graphical Installer and didn’t change any install settings
 *   Open Anaconda Powershell Prompt or Anaconda Prompt
 *   Update conda and anaconda
-    *   **conda update conda **and type y if asked to proceed
-    *   **conda update anaconda **and type y if asked to proceed
-    *   **conda install keras **and type y if asked to proceed
+    *   **conda update conda** and type **y** if asked to proceed
+    *   **conda update anaconda** and type **y** if asked to proceed
+    *   **conda install keras** and type **y** if asked to proceed
 
 
 # Making Keras and Tensorflow run on your GPU (optional but recommended)
