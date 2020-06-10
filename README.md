@@ -75,7 +75,7 @@ Difficult way
 *   Create an environment (we will name ours **handwriting) **You can create an environment by typing **conda create -n [your environment name] [any packages you want to include]. **However we will be cloning our base environment using **conda create -n  [your environment name] --clone [name of environment being cloned].**
 *   **conda create -n handwriting --clone base**
     *   This will take a while
-*   **cd **to the location you want your project to be and create a directory there
+*   **cd** to the location you want your project to be and create a directory there
 *   open jupyter notebook by typing **jupyter notebook**
 *   In jupyter notebook, click new, and then python3
 *   Paste your code in cells as you prefer, following the tutorial. More information about how to use jupyter notebook can be found **[here](https://www.dataquest.io/blog/jupyter-notebook-tutorial/).**
