@@ -63,8 +63,8 @@ Difficult way
 *   In anaconda prompt, type **conda install keras-gpu **(This can be in your base environment a custom one. Remember to activate this environment or install keras-gpu to any environments for projects you want to use your GPU in)
 *   To verify the installation, open anaconda prompt and type **python**
 *   Type **import tensorflow as tf**
-*   Type** print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))<code>)</code></strong>
-*   The output should read<strong> Num GPUs Available: 1</strong>
+*   Type **print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))**
+*   The output should read **Num GPUs Available: X** (where X = the number of GPU'S in your system)
 *   [semi outdated tutorial](https://www.codingforentrepreneurs.com/blog/install-tensorflow-gpu-windows-cuda-cudnn/)
 
 
