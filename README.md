@@ -20,7 +20,8 @@ Image recognition using convolutional neural networks
 *   [3blue video 2 - Gradient Descent](https://www.youtube.com/watch?time_continue=1&v=IHZwWFHWa-w&feature=emb_logo)
 *   [Online Book - Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 *   [Tutorial - Cat and Dog Recognition](https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/)
-*   [VGG model](https://arxiv.org/pdf/1409.1556.pdf)
+*   [VGG model](https://arxiv.org/pdf/1409.1556.pdf
+*   [ Stop Sign](https://towardsdatascience.com/traffic-sign-detection-using-convolutional-neural-network-660fb32fe90e)
 
 A conda environment is a directory that contains a specific collection of conda packages that you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies, and another environment with NumPy 1.6 for legacy testing. If you change one environment, your other environments are not affected. You can easily activate or deactivate environments, which is how you switch behttps://www.youtube.com/watch?v=FmpDIaiMIeAtween them. You can also share your environment with someone by giving them a copy of your environment.yaml file.
 
