@@ -1,6 +1,3 @@
-# cnn_research
-Image recognition using convolutional neural networks
-
 # Links
 
 
@@ -21,7 +18,6 @@ Image recognition using convolutional neural networks
 *   [Online Book - Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 *   [Tutorial - Cat and Dog Recognition](https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/)
 *   [VGG model](https://arxiv.org/pdf/1409.1556.pdf)
-*   [ Stop Sign](https://towardsdatascience.com/traffic-sign-detection-using-convolutional-neural-network-660fb32fe90e)
 
 A conda environment is a directory that contains a specific collection of conda packages that you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies, and another environment with NumPy 1.6 for legacy testing. If you change one environment, your other environments are not affected. You can easily activate or deactivate environments, which is how you switch behttps://www.youtube.com/watch?v=FmpDIaiMIeAtween them. You can also share your environment with someone by giving them a copy of your environment.yaml file.
 
@@ -34,23 +30,32 @@ A conda environment is a directory that contains a specific collection of conda 
     *   I used the python 3.7 version, the 64- Bit Graphical Installer and didn’t change any install settings
 *   Open Anaconda Powershell Prompt or Anaconda Prompt
 *   Update conda and anaconda
-    *   **conda update conda** and type **y** if asked to proceed
-    *   **conda update anaconda** and type **y** if asked to proceed
-    *   **conda install keras** and type **y** if asked to proceed
+    *   **conda update conda **and type y if asked to proceed
+    *   **conda update anaconda **and type y if asked to proceed
+    *   **conda install keras **and type y if asked to proceed
 
 
 # Making Keras and Tensorflow run on your GPU (optional but recommended)
+
+
+
+*   [build configurations for linux and mac](https://www.tensorflow.org/install/source#tested_build_configurations)
+*   [build configurations for windows](https://www.tensorflow.org/install/source_windows#gpu)
 
 Easy way
 
 
 
-*   Open conda prompt and type **conda create --name tf_gpu tensorflow-gpu**
+*   Open conda prompt and type **conda create --name tf_env tensorflow**
+*   **conda install tensorflow-gpu ipykernel scikit-learn matplotlib keras**
+*   Depending on the project, you may need to install other packages
 *   Type **python**
 *   Type **import tensorflow as tf**
-*   Type **sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))**
+*   Type **sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))**
 *   The last few lines should display some information about your gpu
-*   Note that this creates an environment in which you will have to install many other libraries into manually. For this reason, I prefer to use the hard way.
+*   Type** print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))<code>)</code></strong>
+*   The output should read<strong> Num GPUs Available: 1</strong>
+*   I recommend making a new environment for each new project and only adding the packages you need. Our current environment has everything we need for the MNIST handwriting project below
 
 Difficult way 
 
@@ -64,8 +69,8 @@ Difficult way
 *   In anaconda prompt, type **conda install keras-gpu **(This can be in your base environment a custom one. Remember to activate this environment or install keras-gpu to any environments for projects you want to use your GPU in)
 *   To verify the installation, open anaconda prompt and type **python**
 *   Type **import tensorflow as tf**
-*   Type **print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))**
-*   The output should read **Num GPUs Available: X** (where X = the number of GPU'S in your system)
+*   Type** print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))<code>)</code></strong>
+*   The output should read<strong> Num GPUs Available: 1</strong>
 *   [semi outdated tutorial](https://www.codingforentrepreneurs.com/blog/install-tensorflow-gpu-windows-cuda-cudnn/)
 
 
@@ -76,7 +81,7 @@ Difficult way
 *   Create an environment (we will name ours **handwriting) **You can create an environment by typing **conda create -n [your environment name] [any packages you want to include]. **However we will be cloning our base environment using **conda create -n  [your environment name] --clone [name of environment being cloned].**
 *   **conda create -n handwriting --clone base**
     *   This will take a while
-*   **cd** to the location you want your project to be and create a directory there
+*   **cd **to the location you want your project to be and create a directory there
 *   open jupyter notebook by typing **jupyter notebook**
 *   In jupyter notebook, click new, and then python3
 *   Paste your code in cells as you prefer, following the tutorial. More information about how to use jupyter notebook can be found **[here](https://www.dataquest.io/blog/jupyter-notebook-tutorial/).**
@@ -98,14 +103,14 @@ The validation dataset is different from the test dataset that is also held back
 *   Once, all the packages you wanted to add to the environment are added then you press Home and where it says applications you look for the environment you created. 
 *   When you press the environment you will see Jupyter notebook needs to be installed just press install and wait for it to install.
 *   Once, everything has completed. You will check by going to your start menu and find anaconda  and scroll down to the Jupyter notebook that  has your environment name and now you can use it. 
-*   **Check:** to ensure everything has been properly imported in jupyter notebook type in the two lines below and then press run. 
+*   **Check: **to ensure everything has been properly imported in jupyter notebook type in the two lines below and then press run. 
 
-    **Import TensorFlow as tf**
+    **Import TensorFlow as tf **
 
 
     **From TensorFlow import Keras**
 
-*   **Note:** if TensorFlow is not able to install on your computer for some reason. Then you will install **Theano **instead and that works with Keras.
+*   **Note: **if TensorFlow is not able to install on your computer for some reason. Then you will install **Theano **instead and that works with Keras.
 
 **<span style="text-decoration:underline;">CNN coding info:</span>**
 
@@ -157,3 +162,5 @@ Information of using Juypter notebook on VsCode
     Check your environment and apply pillow to your environment. Matplotlib requires PIL(Python Imaging Library) to work with .jpg format. Install pillow , if using conda in command line try conda install pillow, if using Anaconda Navigator go to your environment and type pillow and then press apply. 
 
 *   Make sure your train folder is in the same folder as your juypter notebook .ipynb file
+
+Python 3.7.6 64-bit ('tf-env4':conda)
