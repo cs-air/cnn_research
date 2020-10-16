@@ -1,3 +1,11 @@
+# Image Recognition Using Convolutional Neural Networks
+*Written by Ben Diekhoff and Ladelle Augustine* 
+
+This readme is a step by step guide of for three CNN experiments in image recognition. It is designed to be understandable by someone with no previous neural network experince. It is divided into 4 main sections:
+- [Setting up your computer](https://github.com/cs-air/cnn_research#setup) to run the experiments
+- [The MNIST Handwritten Digit Classification Experiment](https://github.com/cs-air/cnn_research#preparing-for-the-mnist-handwritten-digit-classification-tutorial---using-command-line)
+- [Dog and Cat recognition](https://github.com/cs-air/cnn_research#preparing-for-the-mnist-handwritten-digit-classification-tutorial---using-command-line)
+- [General object detection and Identification, both for still images and video](https://github.com/cs-air/cnn_research#object-detection)
 # Links
 
 
@@ -30,6 +38,7 @@ A conda environment is a directory that contains a specific collection of conda 
     *   I used the python 3.7 version, the 64- Bit Graphical Installer and didn’t change any install settings
 *   Open Anaconda Powershell Prompt or Anaconda Prompt
 *   Update conda and anaconda
+
     *   **conda update conda **and type y if asked to proceed
     *   **conda update anaconda **and type y if asked to proceed
     *   **conda install keras **and type y if asked to proceed
@@ -156,8 +165,6 @@ Information of using Juypter notebook on VsCode
 
 *   Data loading and reshaping to change to binary vectors
 *   Tensorflow Core 2.20 v : [tf.keras.utils.to_categorical](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical)
-*   
-*   
 
 
 # Dog and Cat Recognition
@@ -193,37 +200,26 @@ Information of using Juypter notebook on VsCode
     *   These steps allowed the dog cat recognition program to run on my GTX 770, which has a terrible compute capability of 3.0. 
 *   If you get OOM (out of memory) errors, reduce the batch size. I had to go from a batch size of 64 to 32 in the dog cat recognition program
 
-**Sites:**
+## Sites:
 
 [Python downloads](https://www.python.org/downloads/)
-
 [Installing Homebrew](https://osxdaily.com/2018/03/07/how-install-homebrew-mac-os/)
-
 [Mac OS - Homebrew - Python](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
-
 [Mac OS - Command Line- Anaconda](https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97)
-
 [Setting up MacOs-Keras-TensorFlow](https://www.dataweekends.com/blog/2017/03/09/set-up-your-mac-for-deep-learning-with-python-keras-and-tensorflow)
 
-**Mac OS system updates**:
+## Mac OS system updates:
 
 Check terminal for the type of python you have by typing 
-
 **python --version**
-
 Next, click the link below
-
 [Anaconda & python](https://www.anaconda.com/products/individual)
-
 I clicked 64-bit graphical installer (442 MB) but, you can use the 64-command line installer (430 MB)
-
 I used Homebrew to install python 3.8.
-
 **<span style="text-decoration:underline;">HOMEBREW</span>**
-
 Simplifies the process of installing command-line software and tools on a Mac. 
 
-**Requirements for installing Homebrew on Mac OS: **
+## Requirements for installing Homebrew on Mac OS: 
 
 
 
@@ -231,113 +227,59 @@ Simplifies the process of installing command-line software and tools on a Mac.
 *   Command Line Tools have to be installed on the Mac ( independently or through Xcode)
 *   Knowledge of the command line and using bash zsh
 
-**How to install Homebrew on Mac OS: **
+## How to install Homebrew on Mac OS: 
 
 
 
 *   Install through ruby and curl
 1. Open the “Terminal” application, found in / Applications/ Utilities/ or type in the search box “terminal”, then click Terminal.app
 2. Enter the following command into a single line of the terminal:
-
-    **[For MacOS Catalina, macOS Mojave, and MacOS Big Sur**]
-
-
+    ##[For MacOS Catalina, macOS Mojave, and MacOS Big Sur**]
     /bin/bash -c “$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install.sh](https://raw.githubusercontent.com/Homebrew/install/master/install.sh))”
 
-
-    **[For MacOS High Sierra, Sierra, El Capitan, and earlier**]
-
-
+    ##[For MacOS High Sierra, Sierra, El Capitan, and earlier**]
     /usr/bin/ruby -e “$ (curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install](https://raw.githubusercontent.com/Homebrew/install/master/install))”
 
 3. Hit enter and there should be a lot of lines about what the script will install & where it will install. Hit enter again to agree or hit escape to cancel.
-4. Enter the administrator password (required by sudo execution) to begin the installation. 
-
-    The installation of Homebrew will take a little while (depending on the speed of the Mac & internet)
-
+4. Enter the administrator password (required by sudo execution) to begin the installation. The installation of Homebrew will take a little while (depending on the speed of the Mac & internet)
 5. When done there will be an “Installation Successful” message.
 6. Read the help documentation if needed by the following command. 
-
     brew help
-
 7. Install software packages through Homebrew
-
-**How to install software packages through Homebrew on Mac**:
-
-
-
+## How to install software packages through Homebrew on Mac:
 1. Type 
-
     **brew install [package name]**
-
 2. Using python as an example:
-
 	**brew install python3**
-
-
-
 3. After python3 installs, you can run it by using
-
     **python3**
-
 4. The default version of  python 2.7 is preinstalled with Mac OS and Mac OS X and is still installed and can run by using 
-
     **python**
-
 5. After python has been installed with Homebrew or with the package installer, you can check the updated version of python by using
-
     **python3 --version**
-
-
     **[side note: both Python will coexist without conflict]**
 
 
-**How to install anaconda by Homebrew**
-
-
-
+## How to install anaconda by Homebrew
 1. Install anaconda by using [ install it in /usr/local aka $HOME ]
-
     **brew cask install anaconda**
-
 2. Copy the path of anaconda
-
     Something like this will show 
-
-
     **/usr/local/anaconda3**
-
 3. Setup the environment path 
-
-**How to install anaconda using the command line:**
-
-
-
+## How to install anaconda using the command line:
 1. Depending on your version of python you can install (if using python 3.7 or 2.7)
-
     For **python 2.7**
-
-
     **bash ~/Downloads/Anaconda2-2019.03-MacOSX-x86_64.sh**
-
-
     For** python 3.7**
-
-
     **Bash ~/Downloads/Anaconda3-2019.03-MacOSX-x86_64.sh**
-
 2. Review the license agreement accept it by pressing “Enter” until you get to the end then type “yes”
 3. If you are happy with the location you will be prompted to hit “Enter”.
-
     Keep in mind you can change the location or cancel the installation by entering CTRL-C.
-
 4. The installation will take some time but will prompt “Do You wish the installer to initialize Anaconda3 by running conda init?” and you will type “yes” when asked.
 5. When finished close out of the terminal and open a new one 
 6. Next, to check if it works type 
-
     **conda list**
-
-
     A list should pop up with packages and versions that are installed in your environment. 
 
 
@@ -389,6 +331,6 @@ Simplifies the process of installing command-line software and tools on a Mac.
     *   **wget [http://pjreddie.com/media/files/vgg-conv.weights](http://pjreddie.com/media/files/vgg-conv.weights)**
     *   Test with **./darknet nightmare cfg/vgg-conv.cfg vgg-conv.weights data/dog.jpg 7**
     *   Other tweaks and settings can be found on the Nightmare page
-    *   
+  
 
 Redmon, J. and Farhadi, A., 2018. _Yolov3: An Incremental Improvement_. [online] arXiv.org. Available at: &lt;[https://arxiv.org/abs/1804.02767](https://arxiv.org/abs/1804.02767)>.
