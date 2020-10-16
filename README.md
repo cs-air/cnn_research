@@ -1,8 +1,10 @@
 # Image Recognition Using Convolutional Neural Networks
 *Written by Ben Diekhoff and Ladelle Augustine* 
 
-This readme is a step by step guide of for three CNN experiments in image recognition. It is designed to be understandable by someone with no previous neural network experince. It is divided into 4 main sections:
-- [Setting up your computer](https://github.com/cs-air/cnn_research#setup) to run the experiments
+This readme is a step by step guide of for three CNN experiments in image recognition. It is designed to be understandable by someone with no previous neural network experince. There are downloadable files on this repo, but **it is strongly recommended you donwload everything from the links included in the readme!**
+
+The readme is divided into 4 main sections:
+- [Setting up your computer to run the experiments]((https://github.com/cs-air/cnn_research#setup))
 - [The MNIST Handwritten Digit Classification Experiment](https://github.com/cs-air/cnn_research#preparing-for-the-mnist-handwritten-digit-classification-tutorial---using-command-line)
 - [Dog and Cat recognition](https://github.com/cs-air/cnn_research#preparing-for-the-mnist-handwritten-digit-classification-tutorial---using-command-line)
 - [General object detection and Identification, both for still images and video](https://github.com/cs-air/cnn_research#object-detection)
