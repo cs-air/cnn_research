@@ -46,8 +46,9 @@ Easy way
 
 
 
-*   Open conda prompt and type **conda create --name tf_env tensorflow**
-*   **conda install tensorflow-gpu ipykernel scikit-learn matplotlib keras**
+*   Open conda prompt and type **conda create --name [env name of your choice] tensorflow-gpu**
+*   **Conda activate [your env name]**
+*   **conda install ipykernel scikit-learn matplotlib keras pillow**
 *   Depending on the project, you may need to install other packages
 *   Type **python**
 *   Type **import tensorflow as tf**
@@ -72,6 +73,27 @@ Difficult way
 *   Type** print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))<code>)</code></strong>
 *   The output should read<strong> Num GPUs Available: 1</strong>
 *   [semi outdated tutorial](https://www.codingforentrepreneurs.com/blog/install-tensorflow-gpu-windows-cuda-cudnn/)
+
+
+# <strong><span style="text-decoration:underline;">Important Notes for the Following Projects</span></strong>
+
+
+
+*   If you run into problems, make your code into a python script and run it from the command line or terminal. Jupyter notebook gives extremely little feedback in error messages! 
+*   If you receive the following error :
+
+        **_ValueError: Only know how to handle extensions: ['png']; with Pillow installed matplotlib can handle more images_**
+
+
+    Check your environment and apply pillow to your environment. Matplotlib requires PIL(Python Imaging Library) to work with .jpg format. Install pillow , if using conda in command line try conda install pillow, if using Anaconda Navigator go to your environment and type pillow and then press apply. 
+
+*   Make sure your train folder is in the same folder as your juypter notebook .ipynb file
+*   If you have an older graphics card and you receive an error messages that says your “compute capability is X, and the required compute capability is  >X” (or your GPU just isn’t running when the program is training) try  
+    *   **conda install cudatoolkit=9.2**
+    *   **Conda install tensorflow-gpu=1.12**
+    *   **Conda install keras=2.2.4**
+    *   These steps allowed the dog cat recognition program to run on my GTX 770, which has a terrible compute capability of 3.0. 
+*   If you get OOM (out of memory) errors, reduce the batch size. I had to go from a batch size of 64 to 32 in the dog cat recognition program
 
 
 # Preparing for the MNIST Handwritten Digit Classification Tutorial - Using Command Line
@@ -144,16 +166,18 @@ Information of using Juypter notebook on VsCode
 
 *   [Tutorial - Cat and Dog Recognition](https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/)
 *   [VGG model](https://arxiv.org/pdf/1409.1556.pdf)
-*   Make a new environment, we will use a clone of the base environment
+*   Make a new environment, we will clone the environment we used for digit classification
 *   Download [the dataset](https://www.kaggle.com/c/dogs-vs-cats/rules) by following the link and clicking “download all” (you need to create an account)
 *   Save file
 *   Unzip the train.zip dataset, this is the only one we need
 *   Only do the optional photo pre-processing if you have over 12GB of memory
 
-**<span style="text-decoration:underline;">Side note</span>**: 
+
+# **<span style="text-decoration:underline;">Important Notes</span>**
 
 
 
+*   If you run into problems, make your code into a python script and run it from the command line or terminal. Jupyter notebook gives extremely little feedback in error messages! 
 *   If you receive the following error :
 
         **_ValueError: Only know how to handle extensions: ['png']; with Pillow installed matplotlib can handle more images_**
@@ -162,5 +186,209 @@ Information of using Juypter notebook on VsCode
     Check your environment and apply pillow to your environment. Matplotlib requires PIL(Python Imaging Library) to work with .jpg format. Install pillow , if using conda in command line try conda install pillow, if using Anaconda Navigator go to your environment and type pillow and then press apply. 
 
 *   Make sure your train folder is in the same folder as your juypter notebook .ipynb file
+*   If you have an older graphics card and you receive an error messages that says your “compute capability is X, and the required compute capability is  >X” (or your GPU just isn’t running when the program is training) try  
+    *   **conda install cudatoolkit=9.2**
+    *   **Conda install tensorflow-gpu=1.12**
+    *   **Conda install keras=2.2.4**
+    *   These steps allowed the dog cat recognition program to run on my GTX 770, which has a terrible compute capability of 3.0. 
+*   If you get OOM (out of memory) errors, reduce the batch size. I had to go from a batch size of 64 to 32 in the dog cat recognition program
 
-Python 3.7.6 64-bit ('tf-env4':conda)
+**Sites:**
+
+[Python downloads](https://www.python.org/downloads/)
+
+[Installing Homebrew](https://osxdaily.com/2018/03/07/how-install-homebrew-mac-os/)
+
+[Mac OS - Homebrew - Python](https://osxdaily.com/2018/06/13/how-install-update-python-3x-mac/)
+
+[Mac OS - Command Line- Anaconda](https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97)
+
+[Setting up MacOs-Keras-TensorFlow](https://www.dataweekends.com/blog/2017/03/09/set-up-your-mac-for-deep-learning-with-python-keras-and-tensorflow)
+
+**Mac OS system updates**:
+
+Check terminal for the type of python you have by typing 
+
+**python --version**
+
+Next, click the link below
+
+[Anaconda & python](https://www.anaconda.com/products/individual)
+
+I clicked 64-bit graphical installer (442 MB) but, you can use the 64-command line installer (430 MB)
+
+I used Homebrew to install python 3.8.
+
+**<span style="text-decoration:underline;">HOMEBREW</span>**
+
+Simplifies the process of installing command-line software and tools on a Mac. 
+
+**Requirements for installing Homebrew on Mac OS: **
+
+
+
+*   Mac running Mac OS X 10.10 or later.
+*   Command Line Tools have to be installed on the Mac ( independently or through Xcode)
+*   Knowledge of the command line and using bash zsh
+
+**How to install Homebrew on Mac OS: **
+
+
+
+*   Install through ruby and curl
+1. Open the “Terminal” application, found in / Applications/ Utilities/ or type in the search box “terminal”, then click Terminal.app
+2. Enter the following command into a single line of the terminal:
+
+    **[For MacOS Catalina, macOS Mojave, and MacOS Big Sur**]
+
+
+    /bin/bash -c “$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install.sh](https://raw.githubusercontent.com/Homebrew/install/master/install.sh))”
+
+
+    **[For MacOS High Sierra, Sierra, El Capitan, and earlier**]
+
+
+    /usr/bin/ruby -e “$ (curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install](https://raw.githubusercontent.com/Homebrew/install/master/install))”
+
+3. Hit enter and there should be a lot of lines about what the script will install & where it will install. Hit enter again to agree or hit escape to cancel.
+4. Enter the administrator password (required by sudo execution) to begin the installation. 
+
+    The installation of Homebrew will take a little while (depending on the speed of the Mac & internet)
+
+5. When done there will be an “Installation Successful” message.
+6. Read the help documentation if needed by the following command. 
+
+    brew help
+
+7. Install software packages through Homebrew
+
+**How to install software packages through Homebrew on Mac**:
+
+
+
+1. Type 
+
+    **brew install [package name]**
+
+2. Using python as an example:
+
+	**brew install python3**
+
+
+
+3. After python3 installs, you can run it by using
+
+    **python3**
+
+4. The default version of  python 2.7 is preinstalled with Mac OS and Mac OS X and is still installed and can run by using 
+
+    **python**
+
+5. After python has been installed with Homebrew or with the package installer, you can check the updated version of python by using
+
+    **python3 --version**
+
+
+    **[side note: both Python will coexist without conflict]**
+
+
+**How to install anaconda by Homebrew**
+
+
+
+1. Install anaconda by using [ install it in /usr/local aka $HOME ]
+
+    **brew cask install anaconda**
+
+2. Copy the path of anaconda
+
+    Something like this will show 
+
+
+    **/usr/local/anaconda3**
+
+3. Setup the environment path 
+
+**How to install anaconda using the command line:**
+
+
+
+1. Depending on your version of python you can install (if using python 3.7 or 2.7)
+
+    For **python 2.7**
+
+
+    **bash ~/Downloads/Anaconda2-2019.03-MacOSX-x86_64.sh**
+
+
+    For** python 3.7**
+
+
+    **Bash ~/Downloads/Anaconda3-2019.03-MacOSX-x86_64.sh**
+
+2. Review the license agreement accept it by pressing “Enter” until you get to the end then type “yes”
+3. If you are happy with the location you will be prompted to hit “Enter”.
+
+    Keep in mind you can change the location or cancel the installation by entering CTRL-C.
+
+4. The installation will take some time but will prompt “Do You wish the installer to initialize Anaconda3 by running conda init?” and you will type “yes” when asked.
+5. When finished close out of the terminal and open a new one 
+6. Next, to check if it works type 
+
+    **conda list**
+
+
+    A list should pop up with packages and versions that are installed in your environment. 
+
+
+
+# Turing
+
+
+
+*   Log in and type **ssh gpu**
+*   **conda create -n tf-gpu2 tensorflow=2.0.0 matplotlib scikit-learn keras pillow tensorflow-gpu=2.0.0**
+*   Use filezilla to upload your data to turing
+*   To run your code, navigate to it on turing and type **python [yourcode.py]**
+
+
+# Object Detection
+
+
+
+*   [darknet wiki](https://github.com/pjreddie/darknet/wiki/YOLO:-Real-Time-Object-Detection)
+*   If you don’t have Ubuntu, [install the ubuntu shell on windows](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview)
+*   [install opencv](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/#installing-opencv-from-the-source)
+*   [install CUDA (if you haven't already)](https://developer.nvidia.com/cuda-downloads)
+*   NOTE THAT IF YOU HAVE ISSUES WITH OPENCV OR CUDA, YOU DON’T HAVE TO INSTALL THEM
+    *   Opencv allows darknet to display detections on-screen, instead of creating a .png you have to manually open (predictions.png). You also won’t be able to detect objects in a video stream
+    *   CUDA allows darknet to use your GPU, which significantly increases performance.
+*   [install darknet](https://pjreddie.com/darknet/install/)        [using this repository!!!](https://github.com/AlexeyAB/darknet)
+    *   **git clone [https://github.com/AlexeyAB/darknet.git](https://github.com/AlexeyAB/darknet.git)**
+    *   **cd darknet**
+    *   Open Makefile and set GPU=1 and OPENCV=1 in the first few lines
+        *   If you didn’t install CUDA,  GPU=0
+        *   If you didn’t install opencv, OPENCV=0
+    *   **Make **[(more info can be found in the readme)](https://github.com/AlexeyAB/darknet#how-to-compile-on-linux-using-cmake)
+        *   It will look like there ar lots of errors, ignore them unless it gives you an error at the end.
+    *   Test with  **./darknet imtest data/eagle.jpg**
+        *   There should be several pictures of an eagle
+*   Set up [YOLO](https://pjreddie.com/darknet/yolo/)
+    *   **cd darknet**
+    *   Download training data **wget https://pjreddie.com/media/files/yolov3.weights**
+    *   To detect objects in a video stream, use **./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights**
+        *   Objects in your webcam should be labeled in realtime!
+        *   You  can also do this with a video with **./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights &lt;video file>**
+        *   This won’t work if you didn’t install opencv
+        *   Your “video will only update once every 20 seconds or so if you didn’t install CUDA
+    *   To detect objects in a still image, use **./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg**
+        *   The data folder has other .jpgs you can test. You can add your own.
+*   Set up [Nightmare](https://pjreddie.com/darknet/nightmare/) (don’t do this without a massive amount of VRAM)
+    *   Nightmare is just for fun -- It makes your images look like Google’s deep dream.
+    *   **cd darknet**
+    *   **wget [http://pjreddie.com/media/files/vgg-conv.weights](http://pjreddie.com/media/files/vgg-conv.weights)**
+    *   Test with **./darknet nightmare cfg/vgg-conv.cfg vgg-conv.weights data/dog.jpg 7**
+    *   Other tweaks and settings can be found on the Nightmare page
+    *   
+
+Redmon, J. and Farhadi, A., 2018. _Yolov3: An Incremental Improvement_. [online] arXiv.org. Available at: &lt;[https://arxiv.org/abs/1804.02767](https://arxiv.org/abs/1804.02767)>.
