@@ -56,7 +56,6 @@ A conda environment is a directory that contains a specific collection of conda 
 Easy way
 
 
-
 *   Open conda prompt and type **conda create --name [env name of your choice] tensorflow-gpu**
 *   **Conda activate [your env name]**
 *   **conda install ipykernel scikit-learn matplotlib keras pillow**
@@ -72,7 +71,6 @@ Easy way
 Difficult way 
 
 
-
 *   This process requires critical thinking skills! Compatibility may have changed since the time of this writing. Don’t blindly follow these steps, read the linked website to ensure everything will work!
 *   Go to the [Tensorflow website](https://www.tensorflow.org/install/gpu) and check the hardware and software requirements
 *   Update you [nvidia graphics card drivers](https://www.nvidia.com/Download/index.aspx)
@@ -81,12 +79,12 @@ Difficult way
 *   In anaconda prompt, type **conda install keras-gpu **(This can be in your base environment a custom one. Remember to activate this environment or install keras-gpu to any environments for projects you want to use your GPU in)
 *   To verify the installation, open anaconda prompt and type **python**
 *   Type **import tensorflow as tf**
-*   Type** print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))<code>)</code></strong>
-*   The output should read<strong> Num GPUs Available: 1</strong>
+*   Type **print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU'))**
+*   The output should read **Num GPUs Available: 1**
 *   [semi outdated tutorial](https://www.codingforentrepreneurs.com/blog/install-tensorflow-gpu-windows-cuda-cudnn/)
 
 
-# <strong><span style="text-decoration:underline;">Important Notes for the Following Projects</span></strong>
+# **Important Notes for the Following Projects**
 
 
 
