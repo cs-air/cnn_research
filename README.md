@@ -136,14 +136,14 @@ The validation dataset is different from the test dataset that is also held back
 *   Once, all the packages you wanted to add to the environment are added then you press Home and where it says applications you look for the environment you created. 
 *   When you press the environment you will see Jupyter notebook needs to be installed just press install and wait for it to install.
 *   Once, everything has completed. You will check by going to your start menu and find anaconda  and scroll down to the Jupyter notebook that  has your environment name and now you can use it. 
-*   **Check: **to ensure everything has been properly imported in jupyter notebook type in the two lines below and then press run. 
+*   **Check:** to ensure everything has been properly imported in jupyter notebook type in the two lines below and then press run. 
 
-    **Import TensorFlow as tf **
+    **Import TensorFlow as tf**
 
 
     **From TensorFlow import Keras**
 
-*   **Note: **if TensorFlow is not able to install on your computer for some reason. Then you will install **Theano **instead and that works with Keras.
+*   **Note**: if TensorFlow is not able to install on your computer for some reason. Then you will install **Theano** instead and that works with Keras.
 
 **<span style="text-decoration:underline;">CNN coding info:</span>**
 
